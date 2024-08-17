@@ -130,3 +130,4 @@ D:\Lucas\PLATZI\Practicas\EFPractica\obj\Debug\net8.0\refint\EFPractica.dll
 D:\Lucas\PLATZI\Practicas\EFPractica\obj\Debug\net8.0\EFPractica.pdb
 D:\Lucas\PLATZI\Practicas\EFPractica\obj\Debug\net8.0\EFPractica.genruntimeconfig.cache
 D:\Lucas\PLATZI\Practicas\EFPractica\obj\Debug\net8.0\ref\EFPractica.dll
+D:\Lucas\PLATZI\Practicas\EFPractica\obj\Debug\net8.0\EFPractica.sourcelink.json

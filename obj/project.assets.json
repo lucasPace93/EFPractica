@@ -453,10 +453,10 @@
           "build/net8.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.InMemory/8.0.7": {
+      "Microsoft.EntityFrameworkCore.InMemory/8.0.8": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "8.0.7"
+          "Microsoft.EntityFrameworkCore": "8.0.8"
         },
         "compile": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
@@ -486,11 +486,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/8.0.7": {
+      "Microsoft.EntityFrameworkCore.SqlServer/8.0.8": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.5",
-          "Microsoft.EntityFrameworkCore.Relational": "8.0.7"
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.8"
         },
         "compile": {
           "lib/net8.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -2294,10 +2294,10 @@
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.InMemory/8.0.7": {
-      "sha512": "LMboWsjFFD+i24pvKwxEz24D0NUPlE7+M6gHYcSLioShxKhsPs/OXcB2E6kWTXHK/HIOM88e0rVNyZylCI81FA==",
+    "Microsoft.EntityFrameworkCore.InMemory/8.0.8": {
+      "sha512": "B4r7MGPHUjuIdoI4dMvGFWK2vIT1svIgR3fITc+62ZHmbkRS+gq0mZ8BU9CXM388MfD5Tsn5KXJjWeu+b9gLlg==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.inmemory/8.0.7",
+      "path": "microsoft.entityframeworkcore.inmemory/8.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2305,7 +2305,7 @@
         "PACKAGE.md",
         "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.xml",
-        "microsoft.entityframeworkcore.inmemory.8.0.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.8.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
@@ -2324,10 +2324,10 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/8.0.7": {
-      "sha512": "6gwbwmXkCb+IGxTQ81KqwGjN15r3bv7PLlb4Ox/cYDqdPFbHXMsk0zgtKyPCiXqkFH2LG7KpvVYUBlu4PyTKZQ==",
+    "Microsoft.EntityFrameworkCore.SqlServer/8.0.8": {
+      "sha512": "A2F52W+hnGqvprx37HcAnYnJv4QoFFdc9cxd/QGNSd1vCu1I0eAEKRd0r9KS3E5I5RRj/m9XJfYCyTdy1cdn5Q==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/8.0.7",
+      "path": "microsoft.entityframeworkcore.sqlserver/8.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2335,7 +2335,7 @@
         "PACKAGE.md",
         "lib/net8.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net8.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.8.0.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.8.0.8.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -4230,8 +4230,8 @@
     "net8.0": [
       "Microsoft.EntityFrameworkCore >= 8.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
-      "Microsoft.EntityFrameworkCore.InMemory >= 8.0.7",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.7",
+      "Microsoft.EntityFrameworkCore.InMemory >= 8.0.8",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite >= 8.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.8"
     ]
@@ -4298,11 +4298,11 @@
           },
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
-            "version": "[8.0.7, )"
+            "version": "[8.0.8, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[8.0.7, )"
+            "version": "[8.0.8, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": {
             "target": "Package",
@@ -4337,16 +4337,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 8.0.8 to 8.0.7. Reference the package directly from the project to select a different version. \r\n EFPractica -> Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite 8.0.8 -> Microsoft.EntityFrameworkCore.SqlServer (>= 8.0.8) \r\n EFPractica -> Microsoft.EntityFrameworkCore.SqlServer (>= 8.0.7)",
-      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

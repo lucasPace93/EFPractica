@@ -12,7 +12,7 @@ namespace EFPractica.models
         //[MaxLength(150)]
         public string Titulo { get; set; }
         //[ForeignKey("CategoriaId")]
-        public Guid CategoriaId { get; set; }
+        public int CategoriaId { get; set; } //era Guid pero lo cambie a int para la practica de Seed Data (datos semilla)
         //[Required]
         //[MaxLength(500)]
         public string Descripcion { get; set; }
@@ -21,7 +21,7 @@ namespace EFPractica.models
         //[Required]
         public DateTime FechaCreacion { get; set; }
         public virtual Categoria Categoria { get; set; }
-       // [NotMapped]
+        // [NotMapped]
         public string Resumen { get; set; }
 
     }

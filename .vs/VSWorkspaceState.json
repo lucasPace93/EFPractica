@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Migrations",
-    "\\models",
-    "\\obj"
+    "\\models"
   ],
+  "SelectedNode": "\\models\\Tarea.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -4,6 +4,7 @@ using EFPractica;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFPractica.Migrations
 {
     [DbContext(typeof(TareasContext))]
-    partial class TareasContextModelSnapshot : ModelSnapshot
+    [Migration("20240825234129_TareasInit")]
+    partial class TareasInit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,23 +47,9 @@ namespace EFPractica.Migrations
                     b.HasKey("CategoriaId");
 
                     b.ToTable("Categoria", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            CategoriaId = new Guid("5e054d99-fab9-4e75-8547-15f9e577b651"),
-                            Nombre = "Actividades pendientes",
-                            Peso = 20
-                        },
-                        new
-                        {
-                            CategoriaId = new Guid("a814c2cc-00fa-44f8-9071-9a8b8c30174d"),
-                            Nombre = "Actividades personales",
-                            Peso = 30
-                        });
                 });
 
-            modelBuilder.Entity("EFPractica.models.Tareas", b =>
+            modelBuilder.Entity("EFPractica.models.Tarea", b =>
                 {
                     b.Property<Guid>("TareaId")
                         .ValueGeneratedOnAdd()
@@ -72,6 +61,9 @@ namespace EFPractica.Migrations
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("PrioridadTarea")
                         .HasColumnType("int");
@@ -86,30 +78,12 @@ namespace EFPractica.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("Tarea", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            TareaId = new Guid("177e77c2-afb0-4bea-8103-2aeb9f9a8b60"),
-                            CategoriaId = new Guid("5e054d99-fab9-4e75-8547-15f9e577b651"),
-                            Descripcion = "armar un api",
-                            PrioridadTarea = 1,
-                            Titulo = "Estudiar Api Rest"
-                        },
-                        new
-                        {
-                            TareaId = new Guid("dd3d55f0-9d03-4bf2-9b8c-954852b00bba"),
-                            CategoriaId = new Guid("a814c2cc-00fa-44f8-9071-9a8b8c30174d"),
-                            Descripcion = "La concha de tu madre edenor",
-                            PrioridadTarea = 2,
-                            Titulo = "Pagar la factura de luz "
-                        });
                 });
 
-            modelBuilder.Entity("EFPractica.models.Tareas", b =>
+            modelBuilder.Entity("EFPractica.models.Tarea", b =>
                 {
                     b.HasOne("EFPractica.models.Categoria", "Categoria")
-                        .WithMany("TareaPorCategoria")
+                        .WithMany("Tarea")
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -119,7 +93,7 @@ namespace EFPractica.Migrations
 
             modelBuilder.Entity("EFPractica.models.Categoria", b =>
                 {
-                    b.Navigation("TareaPorCategoria");
+                    b.Navigation("Tarea");
                 });
 #pragma warning restore 612, 618
         }

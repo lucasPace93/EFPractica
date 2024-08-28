@@ -4,6 +4,7 @@ using EFPractica;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFPractica.Migrations
 {
     [DbContext(typeof(TareasContext))]
-    partial class TareasContextModelSnapshot : ModelSnapshot
+    [Migration("20240826002909_SinFechaDeCreacion")]
+    partial class SinFechaDeCreacion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,6 +76,9 @@ namespace EFPractica.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("PrioridadTarea")
                         .HasColumnType("int");
 
@@ -93,6 +99,7 @@ namespace EFPractica.Migrations
                             TareaId = new Guid("177e77c2-afb0-4bea-8103-2aeb9f9a8b60"),
                             CategoriaId = new Guid("5e054d99-fab9-4e75-8547-15f9e577b651"),
                             Descripcion = "armar un api",
+                            FechaCreacion = new DateTime(2024, 8, 25, 21, 29, 8, 235, DateTimeKind.Local).AddTicks(899),
                             PrioridadTarea = 1,
                             Titulo = "Estudiar Api Rest"
                         },
@@ -101,6 +108,7 @@ namespace EFPractica.Migrations
                             TareaId = new Guid("dd3d55f0-9d03-4bf2-9b8c-954852b00bba"),
                             CategoriaId = new Guid("a814c2cc-00fa-44f8-9071-9a8b8c30174d"),
                             Descripcion = "La concha de tu madre edenor",
+                            FechaCreacion = new DateTime(2024, 8, 25, 21, 29, 8, 235, DateTimeKind.Local).AddTicks(913),
                             PrioridadTarea = 2,
                             Titulo = "Pagar la factura de luz "
                         });
@@ -109,7 +117,7 @@ namespace EFPractica.Migrations
             modelBuilder.Entity("EFPractica.models.Tareas", b =>
                 {
                     b.HasOne("EFPractica.models.Categoria", "Categoria")
-                        .WithMany("TareaPorCategoria")
+                        .WithMany("TareaV")
                         .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -119,7 +127,7 @@ namespace EFPractica.Migrations
 
             modelBuilder.Entity("EFPractica.models.Categoria", b =>
                 {
-                    b.Navigation("TareaPorCategoria");
+                    b.Navigation("TareaV");
                 });
 #pragma warning restore 612, 618
         }

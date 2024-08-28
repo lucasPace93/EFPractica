@@ -10,7 +10,7 @@ builder.Services.AddSqlServer<TareasContext>(builder.Configuration.GetConnection
 
 var app = builder.Build();
 
-//app.MapGet("/", () => { return "Hello!"; });
+//app.MapGet("/prueba", () => { return "Hello!"; });
 
 //mapeo de metodo (endpoint: dbconexion) 
 app.MapGet("/dbconexion", /*async*/ ([FromServices] TareasContext dbContext) =>
@@ -19,7 +19,14 @@ app.MapGet("/dbconexion", /*async*/ ([FromServices] TareasContext dbContext) =>
     //var categoriaAwait = await File.ReadAllTextAsync("categorias.json");
     dbContext.Database.EnsureCreated();
     return Results.Ok($"Base de datos en memoria:  {dbContext.Database.IsInMemory()} ");
-
 });
+
+/*
+app.MapGet("/apiTareas", ([FromServices] TareasContext dbContext) =>
+{
+    return Results.Ok(dbContext.TareaDb);
+});
+*/
+
 app.UseHttpsRedirection();
 app.Run();

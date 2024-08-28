@@ -1,13 +1,9 @@
-
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace EFPractica.models
 {
     public class Categoria
     {
         //[Key]
-        public int CategoriaId { get; set; } //era Guid pero para resolver la practica de seed data
+        public Guid CategoriaId { get; set; } 
         //[Required]
         //[MaxLength(150)]
         public string Nombre { get; set; }
@@ -17,7 +13,7 @@ namespace EFPractica.models
         //[Required]
         public int Peso { get; set; }
         // [ForeignKey("TareaId")]
-        public virtual ICollection<Tarea> Tarea { get; set; }
+        public virtual ICollection<Tareas> TareaPorCategoria { get; set; }
         
     }
 }
